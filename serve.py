@@ -15,7 +15,7 @@ def getIP():
 @app.route('/stressCpu',methods = ['POST'])
 def stressCpu():
     print(f"stressing the CPU to 100% utilization")
-    subprocess.Popen("python stress_cpu.py", shell=True, stdout=subprocess.PIPE)
+    subprocess.Popen("python3 stress_cpu.py", shell=True, stdout=subprocess.PIPE)
     return "invoked stress_cpu function"
 
 
