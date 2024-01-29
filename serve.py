@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, request, Response
+from flask import Flask, redirect, url_for, request
 import socket
 import subprocess
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/',methods = ['GET'])
 def getIP():
     print(f"IP of EC2 instance ={socket.gethostname()}")
-    return Response(socket.gethostname(), mimetype='text/xml')
+    return socket.gethostname()
 
 
 @app.route('/',methods = ['POST'])
